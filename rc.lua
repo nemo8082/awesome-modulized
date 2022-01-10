@@ -67,6 +67,7 @@ Nemo : 01/2022
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
 
+local gears = require("gears")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 
@@ -79,7 +80,7 @@ if awesome.startup_errors then
 end
 
 -- Theme
-beautiful.init("~/.config/awesome/themes/lgbt/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 
 require 'widgets'
 require 'bindings'
